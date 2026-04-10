@@ -72,14 +72,19 @@ public class Board{
 
 
     }
+// checks if the entered position by the user is valid or not;
+    private boolean isValidMove(int row,int column){
+        if(row< size && column < size){
+            if(this.Game_Board[row][column].equals(" "+String.valueOf(Cross)) ||
+             this.Game_Board[row][column].equals(" "+String.valueOf(Zero)))
+              return false;
 
-    private static boolean isValidMove(int row,int column){
-        if(row< size && column < size)
-            return true;
-        else return false;
+            else return true;  
+        }
+        return false;
 
     }
-
+// the function check for the winning symbol by check if 3 consecutive cells are 0s or Xs;
     public boolean isWinner(){
         String Symbol = " "+String.valueOf(Board.Symbol);
 
@@ -116,7 +121,7 @@ public class Board{
 
 
         }
-    
+    // the function prints the Winning Symbol
     public static void Get_Winner(){
         System.out.printf("The winner is: %c", Board.Symbol);
     }
