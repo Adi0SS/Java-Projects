@@ -32,6 +32,7 @@ private static Scanner sc = new Scanner(System.in);
         Board.Change_Symbol();
         if(Board.isFull()){
             System.out.println("It's a Draw");
+            break;
         }
   
         }
